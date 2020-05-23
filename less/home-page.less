@@ -1,21 +1,13 @@
 header {
   .flex();
   flex-direction: column;
-
-  img {
-    width: 60%;
-    align-self: center;
-  }
-  h2 {
-    width: 60%;
-    padding-left: 20%;
-  }
-  p {
-    align-self: start;
-
-    padding-left: 20%;
-    padding-right: 20%;
-    border-bottom: 2px dashed @navigation-border;
+  border-bottom: 2px dashed @navigation-border;
+  width: 60%;
+  margin-left: 20%;
+  @media @mobile {
+    h2 {
+      font-size: 2.7rem;
+    }
   }
 }
 
@@ -25,6 +17,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
 
     .text-content {
       width: 48%;
@@ -44,6 +41,10 @@ header {
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    @media @mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -70,10 +71,17 @@ header {
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media @mobile {
+        width: 70%;
+      }
     }
   }
 } // home
